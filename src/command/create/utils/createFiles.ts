@@ -182,10 +182,12 @@ const vue3App = `<template>
 
 <style scoped>
 </style>`
-const react17Index = `import ReactDom from 'react-dom'
+const react17Index = (isTs: boolean)=>{
+  return `import ReactDom from 'react-dom'
 import App from './App'
 
-ReactDom.render(<App />, document.querySelector('#root'))`
+ReactDom.render(<App />, document.querySelector('#root')${isTs ? '!' : ''})`
+}
 const reactApp = `export default function () {
   return (
     <div>
@@ -193,10 +195,12 @@ const reactApp = `export default function () {
     </div>
   )
 }`
-const react18Index = `import ReactDom from 'react-dom'
+const react18Index = (isTs: Boolean)=>{
+  return `import ReactDom from 'react-dom/client'
 import App from './App'
 
-ReactDom.createRoot(document.querySelector('#root')).render(<App />)`
+ReactDom.createRoot(document.querySelector('#root')${isTs ? '!' : ''}).render(<App />)`
+}
 const viteEnv = `// 兼容资源
 declare module '*.svg'
 declare module '*.png'
@@ -230,11 +234,11 @@ export async function createSrc(this: CreateCommandClass, answer: CreateAnswer) 
       files['App.vue'] = vue3App
       break
     case USE_FRAME.REACT17:
-      files[`index.${isTs ? 'tsx' : 'jsx'}`] = react17Index
+      files[`index.${isTs ? 'tsx' : 'jsx'}`] = react17Index(isTs)
       files[`App.${isTs ? 'tsx' : 'jsx'}`] = reactApp
       break
     case USE_FRAME.REACT18:
-      files[`index.${isTs ? 'tsx' : 'jsx'}`] = react18Index
+      files[`index.${isTs ? 'tsx' : 'jsx'}`] = react18Index(isTs)
       files[`App.${isTs ? 'tsx' : 'jsx'}`] = reactApp
       break
   }

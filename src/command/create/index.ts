@@ -57,11 +57,6 @@ export default class CreateCommand extends CommandAbs {
       message.warn('vue暂时不会集成eslint')
     }
 
-    // if (answer[0] === USE_FRAME.REACT18 && answer[1] === USE_TS.YES) {
-    //   answer[1] = USE_TS.NO
-    //   message.warn('react18版本暂时没有对应的类型库')
-    // }
-
     let isSuccess = false
 
     try {
