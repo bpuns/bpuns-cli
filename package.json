@@ -1,0 +1,26 @@
+{
+  "name": "bpuns-cli",
+  "version": "0.0.0-alpha220307",
+  "description": "命令行工具",
+  "bin": {
+    "bp": "./lib/index.js"
+  },
+  "scripts": {
+    "start": "tsc --project tsconfig.json -w",
+    "ts": "tsc-alias -w",
+    "dev": "bp dev"
+  },
+  "author": "bpuns_lin",
+  "repository": "https://gitee.com/bpuns/bpuns-cli.git",
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "14.14.35",
+    "@typescript-eslint/parser": "4.15.2",
+    "eslint": "7.20.0",
+    "tsc-alias": "^1.3.9",
+    "typescript": "4.3.5"
+  }
+}

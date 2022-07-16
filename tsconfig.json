@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib",
+    "target": "es2018",
+    "lib": [
+      "es2020"
+    ],
+    "downlevelIteration": true,
+    "noImplicitAny": false,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    // 去除编译后头文件的 use strict
+    "noImplicitUseStrict": true,
+    "alwaysStrict": false,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "baseUrl": "./",
+    "paths": {
+      "*": [
+        "types/*"
+      ],
+      "src/*": [
+        "src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+}
